@@ -54,7 +54,7 @@ jobs:
         run: |-
           pnpm run docs:build
 
-      - name: Deploy to Server
+      - name: Deploy
         uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
         env:
           DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }} # 引用配置，SSH私钥
