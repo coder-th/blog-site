@@ -1,0 +1,66 @@
+
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      # make sure this is the branch you are using
+      - main
+
+jobs:
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          # if your docs needs submodules, uncomment the following line
+          # submodules: true
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+
+      - name: Build Docs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          pnpm run docs:build
+
+      - name: Deploy to Server
+        uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
+        env:
+          DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }} # 引用配置，SSH私钥
+          ARGS: -avz --delete --exclude='*.pyc' --exclude='node_modules/*' # rsync参数，排除.pyc文件
+          SERVER_PORT: ${{ secrets.REMOTE_PORT }} # SSH端口
+          FOLDER: .vuepress/dist/* # 要推送的文件夹，路径相对于代码仓库的根目录
+          SERVER_IP: ${{ secrets.REMOTE_HOST }} # 引用配置，服务器的host名（IP或者域名domain.com）
+          USERNAME: ${{ secrets.REMOTE_USER }} # 引用配置，服务器登录名
+          SERVER_DESTINATION: ${{ secrets.REMOTE_TARGET }}
