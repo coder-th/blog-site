@@ -53,6 +53,7 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm run docs:build
+          echo ${{ secrets.ACCESS_TOKEN }}
 
       - name: Deploy to Server
         uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
