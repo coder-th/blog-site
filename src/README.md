@@ -2,11 +2,11 @@
 home: true
 layout: BlogHome
 icon: home
-title: Blog Home
+title: 首页
 heroImage: /logo.svg
-heroText: the name of your blog
-tagline: You can put your slogan here
-heroFullScreen: true
+heroText: 咸鱼翻身
+tagline: 学如逆水行舟，不进则退！
+heroFullScreen: false
 projects:
   - icon: project
     name: project name
@@ -38,11 +38,5 @@ projects:
     desc: Detailed description of this custom item
     link: https://link.to.your.friend
 
-footer: customize your footer text
+footer: <a href="https://ythzxfw.miit.gov.cn/index" target="_blank">域名备案</a>
 ---
-
-This is a blog home page demo.
-
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
-
-For related configuration docs, please see [blog homepage](https://theme-hope.vuejs.vuepress/guide/blog/home/).
