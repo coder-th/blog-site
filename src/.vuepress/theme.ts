@@ -35,7 +35,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
+      footer: '<a href="https://ythzxfw.miit.gov.cn/index" target="_blank">域名备案</a>',
 
       displayFooter: true,
 
