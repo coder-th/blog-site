@@ -23,4 +23,11 @@ export const zhSidebar = sidebar({
       children: "structure",
     },
   ],
+  "/后端/go/": [
+    {
+      text: "go",
+      icon: "cangshu",
+      children: "structure",
+    },
+  ],
 });

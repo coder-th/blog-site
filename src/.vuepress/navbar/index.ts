@@ -26,8 +26,20 @@ export const zhNavbar = navbar([
     children: [
       {
         text: "vue",
-        icon: "edit",
+        icon: "vue",
         link: "vue/"
+      },
+    ],
+  },
+  {
+    text: "后端",
+    icon: "cloud-server",
+    prefix: "/后端/",
+    children: [
+      {
+        text: "go",
+        icon: "cangshu",
+        link: "go/"
       },
     ],
   },
