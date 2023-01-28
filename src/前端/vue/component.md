@@ -4,6 +4,7 @@ editLink: false
 icon: component
 ---
 
+![](https://www.runoob.com/wp-content/uploads/2017/01/components.png)
 
 vue组件认识
 

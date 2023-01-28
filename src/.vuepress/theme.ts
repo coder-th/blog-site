@@ -52,7 +52,9 @@ export default hopeTheme({
   },
 
   plugins: {
-    blog: true,
+    blog: {
+      excerptLength: 100
+    },
     // Disable features you don’t want here
     mdEnhance: {
       align: true,

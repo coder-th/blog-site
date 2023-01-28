@@ -4,6 +4,8 @@ editLink: false
 tag: ["leetcode"]
 ---
 
+![](https://pic.mac89.com/pic/202112/16121050_9586fc6f4d.jpeg)
+
 ## 双指针与链表
 ### 合并两个有序链表
 - [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
