@@ -2,41 +2,8 @@
 home: true
 layout: BlogHome
 icon: home
-title: 首页
-heroImage: /logo.svg
-heroText: 咸鱼翻身
-tagline: 学如逆水行舟，不进则退！
+title: 我的博客
+tagline: 学如逆水行舟,不进则退！
 heroFullScreen: false
-projects:
-  - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
-
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
-
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
-
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
-
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
-
-  - icon: /logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
-
 footer: <a href="https://ythzxfw.miit.gov.cn/index" target="_blank">域名备案</a>
 ---
