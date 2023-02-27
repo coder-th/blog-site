@@ -35,7 +35,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: '<a href="https://ythzxfw.miit.gov.cn/index" target="_blank">域名备案</a>',
+      footer: '<a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2023012687号</a>',
 
       displayFooter: true,
 
